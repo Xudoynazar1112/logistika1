@@ -28,7 +28,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+ALLOWED_HOSTS = ['*', 'logistika1.onrender.com', 'lightexpeditionlink.pythonanywhere.com',
+                 'xudoynazar1112.pythonanywhere.com']
 
 
 # Application definition
@@ -151,4 +152,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 TELEGRAM_BOT_TOKEN = '7243066327:AAH-uNlqdphyLIKZZ_W8zEu2imiCrRJMpVc'
 # CORRECT_PASSWORD = 'salom'
-TELEGRAM_CHAT_ID = '843414567'     # '6664570008'
+TELEGRAM_CHAT_ID = '6664570008'     # '843414567'

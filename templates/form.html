@@ -10,7 +10,7 @@
         body {
             font-family: Arial, sans-serif;
             background-color: rgb(244, 244, 244, 0.1);
-            background-image: url('media/images/photo.jpg');
+            background-image: url('media/images/bg_image.jpg');
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -21,6 +21,11 @@
 
         form, h2 {
             background-color: rgba(255, 255, 255, 0.9);
+        }
+        h2 {
+            width: 90%;
+            margin: 0 auto;
+            padding: 10px 0;
         }
         .form-group {
             margin: 20px;
@@ -44,6 +49,7 @@
 
         button {
             margin-left: 50%;
+            transform: translateX(-50%);
             padding: 5px 20px;
             border-radius: 12px;
         }
@@ -56,13 +62,14 @@
 
         img {
             width: 350px;
-            height: 200px;
+            height: 300px;
             border-radius: 20px;
             margin-left: 35%;
             margin-bottom: 20px;
         }
         .inp {
             display: flex;
+            align-items: center;
         }
         .inp i {
             color: #ff762a;
@@ -78,22 +85,40 @@
             .form-groups {
                 grid-template-columns: 1fr 1fr;
             }
+
+            button {
+                width: 100%;
+                margin-left: 0;
+                transform: none;
+            }
         }
+
         @media only screen and (max-width: 640px) {
             .form-groups {
                 grid-template-columns: 1fr;
             }
+
             img {
-                margin-left: 10%;
                 width: 200px;
-                height: 100px;
+                height: 150px;
+                margin-left: 25%;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                width: 100%;
+            }
+
+            textarea {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
 <div class="container mt-5">
-    <img src="/media/images/IMG_20240817_101723_685.jpg">
+    <img src="/media/images/new_logo.jpg">
     <h2 class="text-center mb-4 rounded">ФОРМА ЗАКАЗА</h2>
     <form method="post" class="border p-4 rounded">
         {% csrf_token %}
@@ -189,6 +214,16 @@
                 <label for="{{ form.tg_nickname.id_for_label }}">Никнейм в Telegram:</label><br>
                 {{ form.tg_nickname.errors }}
                 <div class="inp"><i class="fa-brands fa-telegram"></i>{{ form.tg_nickname }}</div>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.interest_rate.id_for_label }}">Проходная ставка:</label><br>
+                {{ form.interest_rate.errors }}
+                <div class="inp"><i class="fa-solid fa-percent"></i>{{ form.interest_rate }}</div>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.payment_type.id_for_label }}">Способ оплаты:</label><br>
+                {{ form.payment_type.errors }}
+                <div class="inp"><i class="fa-regular fa-credit-card"></i>{{ form.payment_type }}</div>
             </div>
             <div class="form-group">
                 <label for="{{ form.comment.id_for_label }}">Комментарий:</label><br>

@@ -6,11 +6,11 @@ from django.utils import timezone
 class Order(models.Model):
     DELIVER_TYPE = (
         ('морской', 'Морской'),
-        ('воздушный', 'Воздушный'),
-        ('наземный', 'Наземный'),
-        ('экспресс', 'Экспресс'),
-        ('группирование', 'Группирование'),
-        ('насыпной груз', 'Насыпной груз'),
+        ('авиа', 'Авиа'),
+        ('железнодорожный', 'Железнодорожный'),
+        ('автоперевозки', 'Автоперевозки'),
+        ('сборный', 'Сборный'),
+        ('мультимодальные', 'Мультимодальные'),
     )
 
     user = models.CharField(max_length=255, null=True, blank=True)
@@ -32,4 +32,5 @@ class Order(models.Model):
     special_notes = models.TextField(blank=True, null=True)
     tg_nickname = models.CharField(max_length=255, blank=True, null=True)
     comment = models.TextField(blank=True, null=True)
-
+    interest_rate = models.CharField(max_length=255, blank=True, null=True)
+    payment_type = models.CharField(max_length=255, blank=True, null=True)

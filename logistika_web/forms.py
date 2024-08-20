@@ -26,6 +26,8 @@ class OrderForm(forms.ModelForm):
             'special_notes': 'Особые отметки',
             'tg_nickname': 'Никнейм в Telegram',
             'comment': 'Комментарий',
+            'interest_rate': 'Проходная ставка',
+            'payment_type': 'Способ оплаты',
         }
 
 
@@ -49,4 +51,6 @@ fields_name = {
     'special_notes': 'Особые отметки',
     'tg_nickname': 'Никнейм в Telegram',
     'comment': 'Комментарий',
+    'interest_rate': 'Проходная ставка',
+    'payment_type': 'Способ оплаты',
 }

@@ -56,6 +56,9 @@ def send_report():
             data = {'chat_id': chat_id}
             response = requests.post(url, data=data, files=files)
             print("everything is ok")
+    elif scheduled_date.date() >= datetime.now().date():
+        pass
+    elif scheduled_date.date() <= datetime.now().date():
         scheduled_date += timedelta(days=7)
         print(scheduled_date)
     return response
